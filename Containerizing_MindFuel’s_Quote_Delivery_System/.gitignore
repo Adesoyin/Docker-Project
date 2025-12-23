@@ -1,0 +1,9 @@
+venv
+.env
+__pycache__
+sqlstatement.sql
+*Zone.Identifier*
+quotes_mailer.log
+cronlog.log
+Archive/
+

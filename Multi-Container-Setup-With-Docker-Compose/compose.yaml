@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:17-alpine
+    restart: on-failure
+    # user: postgres
+    volumes: # storage for reuseability and persistence in docker volumes
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    expose:
+      - 5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5 
+
+  app:
+    image: esther69/zenquotes-mailer
+    restart: on-failure
+    env_file:
+      - .env
+    depends_on:
+      - db
+    command: ['python', 'main.py']
+
+volumes:
+  db-data:
+
