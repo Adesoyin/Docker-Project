@@ -11,11 +11,6 @@ COPY includes ./
 # Installing dependencies from requirements file
 RUN pip install -r requirements.txt
 
-# ENV DB_HOST="" \
-#     DB_PORT="5432" \
-#     DB_NAME="" \
-#     DB_USER=""
-
 # Copying all files from current directory to working directory in the container
 COPY . .
 
@@ -24,13 +19,3 @@ ENV PYTHONUNBUFFERED=1
 
 # Command to run the application
 CMD ["python", "main.py"]
-
-
-
-
-# This File conatins a layer of instructions to be followed up for creation of image and running of container in docker.
-
-
-
-
-

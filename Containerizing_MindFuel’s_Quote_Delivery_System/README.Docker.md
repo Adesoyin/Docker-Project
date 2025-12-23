@@ -16,7 +16,7 @@ A containerized Python service that fetches a daily quote, connects to a Postgre
     docker images
     docker ps -a
 
-#### Run and Test locally
+#### Running and Testing locally
     docker run --env-file .env zenquotes-mailer
     docker logs <container_id>
 
@@ -30,7 +30,7 @@ This verifies:
 
 **Tagging the image built**
 
-The Docker image tag MUST match on's Docker Hub username.
+Ensured the Docker image tag match on's Docker Hub username.
 
     docker tag zenquotes-mailer esther69/zenquotes-mailer:latest
 
@@ -44,19 +44,20 @@ Link to confirm publish: [zenquotes-mailer image](https://hub.docker.com/r/esthe
 
 ![alt text](Archive/image.png)
 
-### Test Pulled Image
+### Testing Pulled Image
 
-**Delete local image**
+**Deleted local image**
 
     docker rmi <image-id>
 
-**Pull from docker hub**
+**Pulled from docker hub**
 
     docker pull esther69/zenquotes-mailer:latest
 
 ![docker pull](Archive/dockerpull.png)
 
 **Running it after pulling**
+
     docker run --env-file .env esther69/zenquotes-mailer:latest
 
 ### Notes
