@@ -30,11 +30,11 @@ This verifies:
 
 **Tagging the image built**
 
-Ensured the Docker image tag match on's Docker Hub username.
+I ensured the Docker image tag match on's Docker Hub username.
 
     docker tag zenquotes-mailer esther69/zenquotes-mailer:latest
 
-verify with `docker images`
+verified with `docker images`
 
 ### Publishing to Docker Hub
     docker login
@@ -42,7 +42,7 @@ verify with `docker images`
 
 Link to confirm publish: [zenquotes-mailer image](https://hub.docker.com/r/esther69/zenquotes-mailer)
 
-![alt text](Archive/image.png)
+![docker image](includes/docker%20image.png)
 
 ### Testing Pulled Image
 
@@ -54,7 +54,7 @@ Link to confirm publish: [zenquotes-mailer image](https://hub.docker.com/r/esthe
 
     docker pull esther69/zenquotes-mailer:latest
 
-![docker pull](Archive/dockerpull.png)
+![docker pull](includes/dockerpull.png)
 
 **Running it after pulling**
 
