@@ -8,8 +8,7 @@ A containerized Python service that fetches a daily quote, connects to a Postgre
 
 ## Steps followed
 1. Docker file that contains all instruction to run the image created following docker command questions using `docker init`
-2. Compose yaml file created which is used to configure Docker application’s services, networks, volumes, and more.
-3. The Dockerfile file was modified
+2. The Dockerfile file was re-worked according to the project requirement
 
 ### Building locally
     docker build -t zenquotes-mailer .
@@ -20,7 +19,7 @@ A containerized Python service that fetches a daily quote, connects to a Postgre
     docker run --env-file .env zenquotes-mailer
     docker logs <container_id>
 
-This verifies:
+The whole process verifies:
 
 💠Quote is fetched from ZenQuotes API
 
@@ -30,7 +29,7 @@ This verifies:
 
 **Tagging the image built**
 
-I ensured the Docker image tag match on's Docker Hub username.
+I ensured the Docker image tag matches Docker Hub username.
 
     docker tag zenquotes-mailer esther69/zenquotes-mailer:latest
 
